@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <title>Test</title>
 <p>
-  <script>document.write(Object.keys(navigator.plugins['Shockwave Flash']));</script>
-</p>
+  <script>
+  document.write(Object.getOwnPropertyNames(navigator.plugins['Shockwave Flash']));
+  document.write(navigator.plugins['Shockwave Flash'].description);
+  document.write(navigator.plugins['Shockwave Flash'].name);
+  </script>
+  </p>
 <p>unicorns stars bots</p>
