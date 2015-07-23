@@ -3,11 +3,14 @@
 <p>
   <script>
   var nativeRound = Math.round;
+  var epsilon = 2.220446049250313e-16;
   var hasRoundBugs = nativeRound && (
     nativeRound(4503599627370497) !== 4503599627370497 ||
-    nativeRound(-4503599627370497) !== -4503599627370497
+    nativeRound(-4503599627370497) !== -4503599627370497 ||
+    Math.round((2 / epsilon + 1) / 2 + 1) === (2 / epsilon + 1) / 2 + 1 ||
+    Math.round(2 / epsilon) === 2 / epsilon
   );
   document.write(hasRoundBugs);
   </script>
   </p>
-<p>omg IE really? oops</p>
+<p>omg IE really? oops more</p>
