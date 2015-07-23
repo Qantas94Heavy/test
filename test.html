@@ -2,15 +2,12 @@
 <title>Test</title>
 <p>
   <script>
-    var replaceReportsGroupsCorrectly = (function () {
-    var groups = [];
-    'x'.replace(/x(.)?/g, function (match, group) {
-      // jshint unused:false
-      groups.push(group);
-    });
-    return groups.length === 1 && groups[0] === undefined;
-  })();
-  document.write(replaceReportsGroupsCorrectly);
+  var nativeRound = Math.round;
+  var hasRoundBugs = nativeRound && (
+    nativeRound(4503599627370497) !== 4503599627370497 ||
+    nativeRound(-4503599627370497) !== 4503599627370497
+  );
+  document.write(hasRoundBugs);
   </script>
   </p>
-<p>let's spin the blame wheel!!!</p>
+<p>omg IE really?</p>
