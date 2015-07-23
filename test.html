@@ -5,9 +5,9 @@
   var nativeRound = Math.round;
   var hasRoundBugs = nativeRound && (
     nativeRound(4503599627370497) !== 4503599627370497 ||
-    nativeRound(-4503599627370497) !== 4503599627370497
+    nativeRound(-4503599627370497) !== -4503599627370497
   );
   document.write(hasRoundBugs);
   </script>
   </p>
-<p>omg IE really?</p>
+<p>omg IE really? oops</p>
