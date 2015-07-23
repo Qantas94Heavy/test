@@ -7,9 +7,10 @@
   var hasRoundBugs = nativeRound && (
     nativeRound(4503599627370497) !== 4503599627370497 ||
     Math.round((2 / epsilon + 1) / 2 + 1) !== (2 / epsilon + 1) / 2 + 1 ||
-    Math.round(2 / epsilon) !== 2 / epsilon
+    Math.round(2 / epsilon) !== 2 / epsilon ||
+    Math.round(0.5 - Number.EPSILON / 4) !== 0
   );
   document.write(hasRoundBugs);
   </script>
   </p>
-<p>omg IE really? oops maybe</p>
+<p>omg IE really? oops safari catch my ass</p>
