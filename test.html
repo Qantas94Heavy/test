@@ -2,15 +2,16 @@
 <title>Test</title>
 <p>
   <script>
-  var nativeRound = Math.round;
-  var epsilon = 2.220446049250313e-16;
-  var hasRoundBugs = nativeRound && (
-    nativeRound(4503599627370497) !== 4503599627370497 ||
-    Math.round((2 / epsilon + 1) / 2 + 1) !== (2 / epsilon + 1) / 2 + 1 ||
-    Math.round(2 / epsilon) !== 2 / epsilon ||
-    Math.round(0.5 - epsilon / 4) !== 0
+  var ws = '\t\n\v\f\r\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008'
+         + '\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
+  var shouldNotTrim = '\x85\u200B';
+  var wsRegexChars = '[' + ws + ']';
+  var trimBeginRegexp = new RegExp('^' + wsRegexChars + '+');
+  var trimEndRegexp = new RegExp(wsRegexChars + '+$');
+  var hasTrimWhitespaceBug = StringPrototype.trim && (
+    ws.trim() || shouldNotTrim !== shouldNotTrim.trim()
   );
-  document.write(hasRoundBugs);
+  document.write(hasTrimWhitespaceBug);
   </script>
   </p>
-<p>omg IE really? oops safari catch my undefined</p>
+<p>omg IE really? stringy stringy</p>
