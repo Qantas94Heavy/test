@@ -8,10 +8,10 @@
   var wsRegexChars = '[' + ws + ']';
   var trimBeginRegexp = new RegExp('^' + wsRegexChars + '+');
   var trimEndRegexp = new RegExp(wsRegexChars + '+$');
-  var hasTrimWhitespaceBug = StringPrototype.trim && (
+  var hasTrimWhitespaceBug = ''.trim && (
     ws.trim() || shouldNotTrim !== shouldNotTrim.trim()
   );
   document.write(hasTrimWhitespaceBug);
   </script>
   </p>
-<p>omg IE really? stringy stringy</p>
+<p>omg error? stringy stringy</p>
