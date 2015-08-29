@@ -2,16 +2,9 @@
 <title>Test</title>
 <p>
   <script>
-  var ws = '\t\n\v\f\r\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008'
-         + '\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
-  var shouldNotTrim = '\x85\u200B';
-  var wsRegexChars = '[' + ws + ']';
-  var trimBeginRegexp = new RegExp('^' + wsRegexChars + '+');
-  var trimEndRegexp = new RegExp(wsRegexChars + '+$');
-  var hasTrimWhitespaceBug = ''.trim && (
-    ws.trim() || shouldNotTrim !== shouldNotTrim.trim()
-  );
-  document.write(hasTrimWhitespaceBug);
+  document.write(typeof Int8Array.prototype.forEach);
+  document.write(typeof ArrayBufferView);
+  document.write(typeof ArrayBuffer.isView);
   </script>
   </p>
-<p>omg error? stringy stringy</p>
+<p>omg error? damm typed arrays</p>
