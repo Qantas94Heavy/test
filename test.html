@@ -2,9 +2,8 @@
 <title>Test</title>
 <p>
   <script>
-  document.write(ArrayBuffer.isView);
-  document.write(typeof ArrayBufferView);
-  document.write(ArrayBufferView);
+  document.write(Object.getOwnPropertyNames(Int8Array.prototype));
+  document.write(Object.getOwnPropertyNames(Object.getPrototypeOf(Int8Array.prototype)));
   </script>
   </p>
-<p>omg where the hell does ArrayBufferView exist 3???</p>
+<p>omg typed array proto fun!!!</p>
