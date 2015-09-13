@@ -2,11 +2,10 @@
 <title>Test</title>
 <p>
   <script>
-  var ws = '\t\n\v\f\r\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008'
-         + '\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
-  var shouldNotTrim = '\x85\u200B';
-  var hasTrimWhitespaceBug = ws.trim() || shouldNotTrim !== shouldNotTrim.trim();
-  document.write(hasTrimWhitespaceBug);
+  var context = new AudioContext();
+  context.decodeAudioData(new ArrayBuffer(1), function(){}, function (error) {
+    document.body.innerHTML = error.message + 'erere';
+  });
   </script>
   </p>
 <p>omg whitespace failz</p>
