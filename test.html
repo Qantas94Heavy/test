@@ -2,8 +2,12 @@
 <title>Test</title>
 <p>
   <script>
-  var context = new webkitAudioContext();
-  document.write(context.decodeAudioData.length);
+  document.write(typeof AudioContext);
+  document.write(typeof webkitAudioContext);
+  try{
+    document.write(AudioContext.prototype.decodeAudioData.length);
+  }catch(e){}
+  document.write(webkitAudioContext.prototype.decodeAudioData.length);
   </script>
   </p>
 <p>omg whitespace failz</p>
