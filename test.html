@@ -2,7 +2,7 @@
 <title>Test</title>
 <p>
   <script>
-  document.write(location.origin);
+  document.write(new (window.AudioContext || window.webkitAudioContext)().decodeAudioData.length);
   </script>
   </p>
 <p>omg where are we?</p>
