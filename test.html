@@ -10,6 +10,11 @@
   document.write(nativeRound(-0.5) !== 0);
   document.write('<br>');
   document.write(1 / nativeRound(-0.5) !== -Infinity);
+  document.write('<br>');
+  document.write(new Float64Array([1,2,3,4]));
+  function a() { return new Float64Array(arguments); }
+  document.write('<br>');
+  document.write(a([1,2,3,4]));
   </script>
   </p>
 <p>rounding woww</p>
